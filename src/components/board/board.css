@@ -1,0 +1,79 @@
+/* chessboard.css */
+.chessBoard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 876px; /* Adjust as needed */
+    height: 876px; /* Adjust as needed */
+    margin: 0 auto; /* Center the chessboard horizontally */
+    
+}
+
+.chessBoardContainer{
+    background-color: rgb(0, 0, 0);
+    margin-left: 5px;
+    margin-top: 5px;
+    height:99.5%;
+    width:99%;
+    
+}
+
+.pieceImage{
+    position:absolute;
+    height:90px;
+    width:90px;
+}
+.selectedSquare {
+    background-color: rgba(194, 237, 66, 0.819); /* Yellow overlay */
+    /* Add any other desired styles for highlighting here */
+}
+
+
+.lastMoveSource {
+    /* Styling for the square the piece moved from */
+    background-color: rgba(214, 238, 143, 0.819);
+}
+
+.lastMoveDestination {
+    /* Styling for the square the piece moved to */
+    background-color:rgba(168, 206, 53, 0.819);
+}
+
+
+/* Add this to your board.css or an appropriate stylesheet */
+.validMoveIndicator {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(61, 61, 61);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.notification-popup {
+    position: fixed; /* Fixed positioning to ensure the notification is always in the middle of the page */
+    top: 52%;        /* Vertical center alignment */
+    left: 50%;       /* Horizontal center alignment */
+    transform: translate(-50%, -50%); /* Translate to perfect centering */
+    
+    font-size: 5em;  /* Increase the font size for visibility */
+    font-weight: 500;
+    color:rgb(0, 0, 0);
+    
+    /* No background or border */
+    background: rgb(254, 253, 253,0.4);
+    border: none;
+
+    /* Fade effect */
+    opacity: 1;                  /* Start fully visible */
+    transition: opacity 3s;     /* 3s transition for fading out */
+}
+
+/* Class to hide the notification */
+.notification-hidden {
+    opacity: 0;  /* Fully transparent (hidden) */
+}
+

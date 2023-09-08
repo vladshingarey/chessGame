@@ -1,0 +1,42 @@
+.chessSquare {
+    width: 109.5px;
+    height: 109.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    position: relative;
+  }
+  
+
+
+  .black {
+    background-color: rgb(131, 86, 56);
+    color: #333;
+  }
+  
+  .white {
+    background-color:rgb(255, 255, 255);
+    color: white;
+    
+  }
+  
+  .colRef {
+    position: absolute;
+    font-size: 18px;
+    bottom: 5px; /* Adjust as needed */
+    left: 5px; /* Adjust as needed */
+    color: rgb(0, 0, 0); /* Make the letters white */
+    font-weight: bold;
+  }
+
+  .rowRef {
+    position: absolute;
+    font-size: 18px;
+    top: 5px;
+    right: 5px;
+    color: rgb(0, 0, 0); /* Make the letters white */
+    font-weight: bold;
+    
+  }
+  
