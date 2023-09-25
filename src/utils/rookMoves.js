@@ -1,7 +1,7 @@
 export function getRookMoves(board, position) {
     const { row, col } = position;
     const moves = [];
-    const directions = [[-1, 0], [1, 0], [0, -1], [0, 1]]; // Up, Down, Left, Right
+    const directions = [[-1, 0], [1, 0], [0, -1], [0, 1]];
 
     for (const [dx, dy] of directions) {
         for (let step = 1; step < 8; step++) {
@@ -18,10 +18,9 @@ export function getRookMoves(board, position) {
                 if (targetSquare.pieceId.includes("White") !== board[row][col].pieceId.includes("White")) {
                     moves.push({ row: newRow, col: newCol });
                 }
-                break; // No more checking in this direction if there's a piece
+                break; 
             }
         }
     }
-
     return moves;
 }

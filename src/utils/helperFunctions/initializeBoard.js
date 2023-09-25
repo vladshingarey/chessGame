@@ -15,7 +15,7 @@ function initializeBoard() {
             
             return {
                 color,
-                pieceColor: pieceId ? (pieceId.includes('White') ? 'white' : 'black') : null, // piece color
+                pieceColor: pieceId ? (pieceId.includes('White') ? 'white' : 'black') : null,
                 pieceId: pieceId ? `${pieceId}-${rowIndex}-${colIndex}` : null,
                 pieceImgSrc: pieceId ? pieceImages[pieceId] : null,
                 selected: false,

@@ -5,18 +5,7 @@ import captureSound from '../../assets/moveSounds/captureSound.mp3';
 
 function movePiece(board, selectedPiece, destRow, destCol, onCapture, lastMove) {
 
-    //const audio = new Audio(sound1);
-    //audio.play();
     const playCaptureSound = new Audio(captureSound);
-    
-    
-
-    // board: current board
-    // selectedPiece: current piece being moved
-    // destRow: row destination
-    // destCol: col destination
-    // onCapture: keep track of piece captured.
-
 
     const newBoard = cloneDeep(board);
     //const newBoard = board.map(row => row.slice());
@@ -38,9 +27,6 @@ function movePiece(board, selectedPiece, destRow, destCol, onCapture, lastMove) 
     else {
         capturedPieceId = newBoard[destRow][destCol].pieceId;
     }
-    
-    
-
     if (capturedPieceId && onCapture) {
     
         playCaptureSound.play();        
@@ -50,18 +36,10 @@ function movePiece(board, selectedPiece, destRow, destCol, onCapture, lastMove) 
             color: color
         });
     }
-
-
-
     let lastMoveUpdate = null;
-
     let newPieceId = getUpdatedPieceId(selectedPiece.id, destRow, destCol);
 
-
-
-
     // Pawn promotion logic:
-    
     if (selectedPiece.id.includes('pawnWhite') && destRow === 0) {
         newPieceId = `queenWhite-${destRow}-${destCol}`;
     } else if (selectedPiece.id.includes('pawnBlack') && destRow === 7) {
@@ -74,15 +52,11 @@ function movePiece(board, selectedPiece, destRow, destCol, onCapture, lastMove) 
         
     }
 
-
-
     // Kingside castling:
     if (selectedPiece.id.includes('king') && destCol - selectedPiece.colIndex === 2) {
-        // Update the king's position as you're already doing in movePiece
 
-        // Move the corresponding rook:
-        const rookOriginalCol = 7; // assuming 0-based index, the rook starts at the last column
-        const rookDestCol = 5;     // rook's destination after kingside castling
+        const rookOriginalCol = 7;
+        const rookDestCol = 5;
 
         // Update the rook's position:
         const rookPieceId = `rook${selectedPiece.id.includes('White') ? 'White' : 'Black'}-${selectedPiece.rowIndex}-${rookDestCol}`;
@@ -107,11 +81,9 @@ function movePiece(board, selectedPiece, destRow, destCol, onCapture, lastMove) 
     }
     // Queenside castling:
     else if (selectedPiece.id.includes('king') && selectedPiece.colIndex - destCol === 2) {
-        // Update the king's position as you're already doing in movePiece
 
-        // Move the corresponding rook:
-        const rookOriginalCol = 0; // assuming 0-based index, the rook starts at the first column
-        const rookDestCol = 3;     // rook's destination after queenside castling
+        const rookOriginalCol = 0;
+        const rookDestCol = 3;
 
         // Update the rook's position:
         const rookPieceId = `rook${selectedPiece.id.includes('White') ? 'White' : 'Black'}-${selectedPiece.rowIndex}-${rookDestCol}`;
@@ -152,13 +124,9 @@ function movePiece(board, selectedPiece, destRow, destCol, onCapture, lastMove) 
         rowIndex: destRow, // updating the rowIndex of the moved piece
         colIndex: destCol  // updating the colIndex of the moved piece
     };
-
-
     return { newBoard, lastMoveUpdate };
 }
 export default movePiece;
-
-
 
 
 function getUpdatedPieceId(pieceId, destRow, destCol) {

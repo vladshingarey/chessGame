@@ -1,50 +1,47 @@
 /* chessboard.css */
+
+.chessBoardContainer{
+    width: 688px; 
+    height: 688px;
+    margin-top:10px;
+    margin-left:30px;
+}
+
 .chessBoard{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 876px; /* Adjust as needed */
-    height: 876px; /* Adjust as needed */
-    margin: 0 auto; /* Center the chessboard horizontally */
-    
-}
+    width: 688px; 
+    height: 688px; 
 
-.chessBoardContainer{
-    background-color: rgb(0, 0, 0);
-    margin-left: 5px;
-    margin-top: 5px;
-    height:99.5%;
-    width:99%;
     
 }
 
 .pieceImage{
     position:absolute;
-    height:90px;
-    width:90px;
+    height:80px;
+    width:80px;
 }
 .selectedSquare {
-    background-color: rgba(194, 237, 66, 0.819); /* Yellow overlay */
+    background-color: rgba(151, 247, 78, 0.819); /* Yellow overlay */
     /* Add any other desired styles for highlighting here */
 }
 
 
 .lastMoveSource {
-    /* Styling for the square the piece moved from */
-    background-color: rgba(214, 238, 143, 0.819);
+    background-color:rgba(207, 243, 180, 0.819)
 }
 
 .lastMoveDestination {
-    /* Styling for the square the piece moved to */
-    background-color:rgba(168, 206, 53, 0.819);
+    background-color:rgba(151, 247, 78, 0.819)
 }
 
 
 /* Add this to your board.css or an appropriate stylesheet */
 .validMoveIndicator {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     background-color: rgb(61, 61, 61);
     border-radius: 50%;
     position: absolute;

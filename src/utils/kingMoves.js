@@ -30,19 +30,19 @@ export function getKingMoves(board, position) {
         if (col + 2 < 8 && !board[row][col + 1].pieceId && !board[row][col + 2].pieceId && board[row][7] && !board[row][7].hasMoved) {
             console.log("TESTER");
             let hypotheticalBoard = cloneDeep(board);
-            hypotheticalBoard[row][col].pieceId = null; // King moves from original position
+            hypotheticalBoard[row][col].pieceId = null; 
         
             if (hypotheticalBoard[row] && hypotheticalBoard[row][col + 1]) {
-                hypotheticalBoard[row][col + 1].pieceId = `king-${kingColor}`; // King moves to the next square
+                hypotheticalBoard[row][col + 1].pieceId = `king-${kingColor}`; 
         
                 if (!isKingInCheck(hypotheticalBoard, { row, col: col + 1 })) {
-                    hypotheticalBoard[row][col + 1].pieceId = null; // Move king from this square
+                    hypotheticalBoard[row][col + 1].pieceId = null; 
         
                     if (hypotheticalBoard[row] && hypotheticalBoard[row][col + 2]) {
-                        hypotheticalBoard[row][col + 2].pieceId = `king-${kingColor}`; // King moves to the castling square
+                        hypotheticalBoard[row][col + 2].pieceId = `king-${kingColor}`; 
         
                         if (!isKingInCheck(hypotheticalBoard, { row, col: col + 2 })) {
-                            moves.push({ row, col: col + 2 }); // Castling move
+                            moves.push({ row, col: col + 2 }); 
                         }
                     }
                 }
@@ -52,19 +52,19 @@ export function getKingMoves(board, position) {
     // Queenside castling
         if (col - 2 >= 0 && !board[row][col - 1].pieceId && !board[row][col - 2].pieceId && board[row][0] && !board[row][0].hasMoved) {
             let hypotheticalBoard = cloneDeep(board);
-            hypotheticalBoard[row][col].pieceId = null; // King moves from original position
+            hypotheticalBoard[row][col].pieceId = null; 
         
             if (hypotheticalBoard[row] && hypotheticalBoard[row][col - 1]) {
-                hypotheticalBoard[row][col - 1].pieceId = `king-${kingColor}`; // King moves to the next square
+                hypotheticalBoard[row][col - 1].pieceId = `king-${kingColor}`; 
         
                 if (!isKingInCheck(hypotheticalBoard, { row, col: col - 1 })) {
-                    hypotheticalBoard[row][col - 1].pieceId = null; // Move king from this square
+                    hypotheticalBoard[row][col - 1].pieceId = null; 
         
                     if (hypotheticalBoard[row] && hypotheticalBoard[row][col - 2]) {
-                        hypotheticalBoard[row][col - 2].pieceId = `king-${kingColor}`; // King moves to the castling square
+                        hypotheticalBoard[row][col - 2].pieceId = `king-${kingColor}`; 
         
                         if (!isKingInCheck(hypotheticalBoard, { row, col: col - 2 })) {
-                            moves.push({ row, col: col - 2 }); // Castling move
+                            moves.push({ row, col: col - 2 }); 
                         }
                     }
                 }
@@ -72,8 +72,6 @@ export function getKingMoves(board, position) {
         }
 
     }
-    
-
     return moves;
 }
 

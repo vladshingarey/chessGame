@@ -13,7 +13,6 @@ export function getPawnMoves(board, position, lastMove) {
     const direction = piece.pieceId.includes('White') ? -1 : 1;
     const moves = [];
 
-
     // Check for one step ahead
     const oneStepAhead = {
         row: row + direction,
@@ -54,7 +53,6 @@ export function getPawnMoves(board, position, lastMove) {
 
     // En Passant logic
 
-
     if (piece.pieceId.includes("pawnWhite") && lastMove && row === 3) {
         if (col === 0 && lastMove.destCol === 1) {
             moves.push(rightCapture);
@@ -70,19 +68,18 @@ export function getPawnMoves(board, position, lastMove) {
         }
     } else if (piece.pieceId.includes("pawnBlack") && lastMove && row === 4) {
         if (col === 0 && lastMove.destCol === 1) {
-            moves.push(rightCapture); // Note: The direction of capture will be opposite for black pawns.
+            moves.push(rightCapture); 
         } else if (col === 7 && lastMove.destCol === 6) {
-            moves.push(leftCapture); // Note: The direction of capture will be opposite for black pawns.
+            moves.push(leftCapture); 
         } else if (col > 0 && col < 7) {
             if (lastMove.destCol + 1 === col) {
-                moves.push(leftCapture); // Note: The direction of capture will be opposite for black pawns.
+                moves.push(leftCapture); 
             }
             if (lastMove.destCol - 1 === col) {
-                moves.push(rightCapture); // Note: The direction of capture will be opposite for black pawns.
+                moves.push(rightCapture); 
             }
         }
     }
-
     return moves;
 }
 

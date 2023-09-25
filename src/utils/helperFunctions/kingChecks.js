@@ -23,10 +23,8 @@ export function isKingInCheck(board, kingPosition) {
     return false; // King is safe
 }
 
-
-
 export function findKing(board, color) {
-    color  = color.charAt(0).toUpperCase() + color.slice(1); // change "white" to "White"
+    color  = color.charAt(0).toUpperCase() + color.slice(1);
     for (let row = 0; row < 8; row++) {
       for (let col = 0; col < 8; col++) {
         if (board[row][col].pieceId && board[row][col].pieceId.includes(`king${color}`)) {
@@ -37,8 +35,6 @@ export function findKing(board, color) {
     return null;
 }
   
-
-
 export function isKingCheckmated(board, color) {
     const kingPosition = findKing(board, color);
     
@@ -62,15 +58,12 @@ export function isKingCheckmated(board, color) {
                     );
                     const kingPositionAfterMove = findKing(resultingBoard, color);
                     if (!isKingInCheck(resultingBoard, kingPositionAfterMove)) {
-                        // Found a valid move that gets the king out of check
                         return false;
                     }
                 }
             }
         }
     }
-
-    // If there are no moves that can get the king out of check, it's checkmate
     return true;
 }
 

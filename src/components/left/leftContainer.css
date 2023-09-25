@@ -6,7 +6,6 @@
   flex-direction: column;
   
 }
-
 .newGameDiv{
   background-image: linear-gradient(to top, #4e4a4b,#33302e);
   position: relative;
@@ -24,55 +23,48 @@
   margin-left: 8px;
   margin-top:2%;
   font-size:  2em;
-  display: flex;            /* Makes the container a flex container */
-  justify-content: center;  /* Centers children horizontally */
+  display: flex;
+  justify-content: center;
   align-items: center;
   color:white;
 }
 
 .notificationCenter.hasMessage {
-  background-color: #a62828;  /* or any color you like */
+  background-color: #a62828; 
 }
-
-
-
 .recentMessages{
   background-image: linear-gradient(to left, #9f9894, #333031);
-  height:60%;
+  height:58%;
   width: 96%;
   margin-left: 8px;
   margin-top: 2%;
   border-radius: 10px;
   color: whitesmoke;
 }
-
 .recentMessages p {
-  font-size: 20px;
+  font-size: 18px;
   color: #f4e6e6;
   text-align: left;
   padding-left: 8px;
   padding-top: 8px;
 }
-
 .inputBox{
   border: 1px solid #ccc;
   border-radius: 10px;
   font-size: 16px;
   width: 96%;
   height:5%;
-  margin-left: 8px;
+  margin-left: 10px;
   margin-top: 2%;
 }
-
 .playAgainButton{
   font-size: 35px;
   border-radius: 8px;
   width:96%;
-  height: 96%;
+  height: 94%;
   margin-top: 5px;  
   background:none ;
 }
 .playAgainButton:hover{
   color:rgb(204, 193, 45);
 }
-

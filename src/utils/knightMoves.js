@@ -15,6 +15,5 @@ export function getKnightMoves(board, position) {
             moves.push({ row: newRow, col: newCol });
         }
     }
-
     return moves;
 }

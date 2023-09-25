@@ -1,6 +1,7 @@
 .chessSquare {
-    width: 109.5px;
-    height: 109.5px;
+  
+    width: 86px;
+    height: 86px;
     display: flex;
     align-items: center;
     justify-content: center;

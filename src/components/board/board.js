@@ -66,7 +66,7 @@ function ChessBoard({ resetBoard, onBoardResetComplete, onCapture, onResetCaptur
                     setTurn('white');
                 }
     
-            }, 1000); 
+            }, 2000); 
         }
         
 

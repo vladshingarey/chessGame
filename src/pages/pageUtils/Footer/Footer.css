@@ -1,0 +1,14 @@
+.appFooter{
+    background-image: url('../../../assets/chessImage.jpg');
+    background-size: cover; 
+    background-position: center; 
+    color: white;
+    text-align: center;
+    width:100%;
+    background-color: black;
+}
+
+.appFooter p {
+    font-size: 17px;
+    margin-top: 10px;
+}

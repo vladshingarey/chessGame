@@ -26,8 +26,8 @@ const LeftContainer = (props) => {
       </div> 
 
       <div className={`notificationCenter ${props.notificationMessage ? 'hasMessage' : ''}`}>
-  <p className="notifText">{props.notificationMessage}</p>
-</div>
+        <p className="notifText">{props.notificationMessage}</p>
+      </div>
 
       <div className="recentMessages"> 
         {recentMessages.map((message, index) => (
