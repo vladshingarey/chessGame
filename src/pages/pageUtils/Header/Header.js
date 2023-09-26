@@ -2,7 +2,13 @@ import './Header.css';
 
 function Header() {
     const reloadPage = () => {
+
+      /*
         window.location.reload(); 
+        */
+
+        const urlToLoad = 'https://vladchessgame.netlify.app/chessPage'; // Replace with the desired URL
+        window.location.href = urlToLoad;
       };
     return (
         <header className = "headerMain">
