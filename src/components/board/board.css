@@ -1,21 +1,22 @@
 /* chessboard.css */
 
-.chessBoardContainer{
-    width: 688px; 
-    height: 688px;
-    margin-top:10px;
-    margin-left:30px;
-}
+.chessBoardContainer {
+    display: flex;
+    justify-content: center; /* Horizontal center alignment */
+    align-items: center; /* Vertical center alignment */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height of the parent (middleContainer) */
+    margin: 0; /* Remove margin */
+  }
+  
 
-.chessBoard{
+.chessBoard {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 688px; 
-    height: 688px; 
-
-    
+    width: 688px;
+    height: 688px;
 }
 
 .pieceImage{
